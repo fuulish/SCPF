@@ -12,9 +12,10 @@
 ------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------
-   Author:  Todd Plantenga (SNL)
-   Sources: "Numerical Optimization", Nocedal and Wright, 2nd Ed, p170
-            "Parallel Unconstrained Min", Plantenga, SAND98-8201
+   Contributing author: Frank Uhlig (ICP Stuttgart)
+   Sources: Minimization algorithms are basically the ones from min_<name>..
+            but adapted to work with LAMMPS groups, no extra degrees of
+            freedom
 ------------------------------------------------------------------------- */
 
 #include <math.h>
@@ -139,7 +140,7 @@ void FixSCPFHFTN::setup_style()
   //---- ALLOCATE MEMORY FOR EXTRA GLOBAL DEGREES OF FREEDOM.
   //---- THE FIX MODULE TAKES CARE OF THE FIRST VECTOR, X0 (XK).
   if (nextra_global) {
-    for (int  i = 1; i < NUM_HFTN_ATOM_BASED_VECTORS; i++)
+    for (int  i = 1; i < NUM_HFTN_ATOM_BASED_VECTORS; i++) {
       _daExtraGlobal[i] = new double[nextra_global];
       for (int  j = 0; j < nextra_global; j++)
         _daExtraGlobal[i][j] = 0.0;

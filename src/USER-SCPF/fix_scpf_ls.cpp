@@ -12,13 +12,8 @@
 ------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------
-   Contributing author: Aidan Thompson (SNL)
-                        improved CG and backtrack ls, added quadratic ls
-   Contributing author: Asad Hasan (CMU)
-                        added forcezero ls
-   Sources: Numerical Recipes frprmn routine
-            "Conjugate Gradient Method Without the Agonizing Pain" by
-            JR Shewchuk, http://www-2.cs.cmu.edu/~jrs/jrspapers.html#cg
+   Contributing author: Frank Uhlig (ICP Stuttgart)
+                        modified version of min_linesearch.cpp
 ------------------------------------------------------------------------- */
 
 #include <math.h>

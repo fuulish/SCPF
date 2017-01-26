@@ -11,6 +11,13 @@
    See the README file in the top-level LAMMPS directory.
 ------------------------------------------------------------------------- */
 
+/* ----------------------------------------------------------------------
+   Contributing author: Frank Uhlig (ICP Stuttgart)
+   Sources: Minimization algorithms are basically the ones from min_<name>..
+            but adapted to work with LAMMPS groups, no extra degrees of
+            freedom
+------------------------------------------------------------------------- */
+
 #include <math.h>
 #include <string.h>
 #include "fix_scpf.h"

@@ -88,7 +88,6 @@ FixSCPF::FixSCPF(LAMMPS *lmp, int narg, char **arg) : FixMinimize(lmp,narg,arg)
   vflag = 0;
 
   printconv = 0;
-  globalfconv = 1;
   first = 1;
 
   zerovels = 1;
@@ -615,11 +614,6 @@ int FixSCPF::modify_param(int narg, char **arg)
       if (iarg+2 > narg) error->all(FLERR,"Illegal fix_modify command");
       if (strcmp(arg[iarg+1], "yes") == 0) printconv = 1;
       else if (strcmp(arg[iarg+1], "no") == 0) printconv = 0;
-      iarg += 2;
-    } else if (strcmp(arg[iarg],"globalfconv") == 0) {
-      if (iarg+2 > narg) error->all(FLERR,"Illegal fix_modify command");
-      if (strcmp(arg[iarg+1], "yes") == 0) globalfconv = 1;
-      else if (strcmp(arg[iarg+1], "no") == 0) globalfconv = 0;
       iarg += 2;
     } else error->all(FLERR,"Illegal fix_modify command");
   }

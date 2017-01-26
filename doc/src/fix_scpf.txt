@@ -1,0 +1,60 @@
+
+"LAMMPS WWW Site"_lws - "LAMMPS Documentation"_ld - "LAMMPS Commands"_lc :c
+
+:link(lws,http://lammps.sandia.gov)
+:link(ld,Manual.html)
+:link(lc,Section_commands.html#comm)
+
+:line
+
+fix scpf command :h3
+fix scpf/sd command :h3
+fix scpf/cg command :h3
+fix scpf/hftn command :h3
+fix scpf/fire command :h3
+fix scpf/quickmin command :h3
+
+[Syntax:]
+
+fix ID group-ID scpf/style args :pre
+
+ID, group-ID are documented in "fix"_fix.html command :ulb,l
+style = {sd} or {cg} or {hftn} or {fire} or {quickmin} :l
+  {style} args = ETOL FTOL NITER NEVAL
+    ETOL = energy tolerance
+    FTOL = global force sum tolerance
+    NITER = number of iterations
+    NEVAL = maximum number of energy/force evaluations :pre
+
+zero or more keyword/value pairs may be appended :l
+keyword = ...
+
+:ule
+
+[Examples:]
+
+fix 1 DRUDES scpf/cg 2 1.e-04 1.e-04 100 1000 :pre
+
+[Description:]
+
+These fixes allow the per-step minimization during molecular dynamics of a subset of degrees of freedom of the system represented by particles.
+
+NOTE: 
+
+:line
+
+[Restart, fix_modify, output, run start/stop, minimize info:]
+
+No information about this fix is written to "binary restart files"_restart.html.
+
+[Restrictions:]
+
+This fix should be invoked before any other time integration fixes.
+
+[Related commands:]
+
+[Default:] 
+
+
+:line
+

@@ -67,7 +67,6 @@ class FixSCPF : public FixMinimize {
   double etol, ftol;
   long maxiter, maxeval;
   int printconv, zerovels;
-  int globalfconv;
   int first, ndim;
 
   void setup_pre_force(int);
