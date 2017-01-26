@@ -110,7 +110,6 @@ int FixSCPFFIRE::iterate(int maxiter)
   double scale1,scale2;
   double dtvone,dtv,dtf,dtfm;
   int flag,flagall;
-  double **v = atom->v;
   int *mask = atom->mask;
 
   alpha_final = 0.0;
