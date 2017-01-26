@@ -38,13 +38,13 @@ velocity DRUDES create ${TDK} 12345
 compute TATOM ATOMS temp
 compute TDRDE DRUDES temp
 
-dump TRJ all custom 100 dump.lammpstrj id xu yu zu fx fy fz
-dump_modify TRJ sort 1
+dump TRJ all custom 100 dump.lammpstrj id type element xu yu zu fx fy fz
+dump_modify TRJ sort 1 element O H X
 
 fix NVT ATOMS rigid/nvt/small molecule temp ${TK} ${TK} 10
 
 fix SCPF DRUDES scpf/cg 1.e-04 1.e-02 1000 1000
-fix_modify SCPF printconv yes
+fix_modify SCPF printconv no
 
 fix MOM ATOMS momentum 100 linear 1 1 1 rescale
 
